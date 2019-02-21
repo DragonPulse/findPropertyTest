@@ -1,0 +1,41 @@
+You are provided a REST webservice that you can use to find information about a home given its unique "home_id". 
+
+Example:
+To find the details of the property with home_id "home_154" make a GET request to 
+
+http://webservice-takehome-1.spookle.xyz/property?property_id=home_154
+
+Alternatively, you can use the following URL: 
+
+https://webservice-takehome-1.herokuapp.com/property?property_id=home_154 
+
+You will receive the following response:
+
+{
+  "address": {
+    "city": "New Ronaldborough", 
+    "state": "VA"
+  }, 
+  "home_id": "home_154", 
+  "owner": "Stephanie Gould", 
+  "value": 305372
+}
+
+This property is located in Virginia, has a property value of $305,372, and the homeowner's name is "Stephanie Gould."
+ If you enter an invalid home ID, you will get the following response:
+
+"Property not found"
+
+Your task is to create a REST webservice of your own.
+Your service should have one endpoint which takes as input a list of home_ids in the form of a JSON array
+(see input.json for an example). Your service should then call the service provided above and use it to
+find the name of the property owner who owns the highest valued property in the state of Virginia (state code "VA") among the home_ids provided. You should then return this information in any format you desire. For the provided input.json, the expected solution is provided in solution.txt. Your webservice should work for any valid input.
+
+Your solution should be in the form of source code that we can run ourselves. You can use any language or framework as long as it is readily avaliable (Java, C#, Python, etc.).
+
+IMPORTANT NOTES:
+    -This webservice is not a real Freddie Mac service, and the information provided by it is entirely fictitious. 
+    -If for whatever reason you are unable to access this webservice (for example, an overly restrictive firewall), please let us know as soon as possible. 
+    -Your webservice should be robust against exceptional input, but how exactly you handle it is up to your discretion.
+    -How you handle ties is also up to your discretion. 
+    
